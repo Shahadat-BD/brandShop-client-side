@@ -1,10 +1,9 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData} from "react-router-dom";
 
 const BrandProduct = () => {
 
  const brandProduct = useLoaderData()
 
-      
 
     return (
         <div className='my-10 lg:w-[80%] w-[90%] m-auto'>
@@ -20,7 +19,7 @@ const BrandProduct = () => {
                            <h3  className=' mt-2'>Brand Name :{product.brandName}</h3>    
                            <h3  className=' mt-2'>Type : {product.category}</h3>    
                            <h3  className=' mt-2'>Rating : {product.rating}</h3>   
-                           <button  className="w-full btn btn-primary">Product Details</button> 
+                           <Link to={`/productDetails/${product._id}`}> <button className="w-full btn btn-primary">Product Details</button> </Link>
                            <button className="w-full my-2 btn btn-warning">Update Product</button>
                           </div>
                           </div>
