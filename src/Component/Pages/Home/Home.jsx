@@ -3,7 +3,7 @@ import Brand from '../Brand/Brand';
 
 const Home = () => {
     return (
-        <div>
+        <div className='lg:w-[80%] w-[90%] m-auto'>
             <Brand></Brand>
         </div>
     );
