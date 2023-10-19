@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
-// import { useLoaderData } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
     const productId = useParams()
     const [productDetails,setProductDetails] = useState([])
+    const [cart,setCart] = useState([])
+
 
     useEffect(()=>{
         fetch('http://localhost:5000/product')
@@ -14,7 +15,29 @@ const ProductDetails = () => {
              setProductDetails(product)
         })
     },[])
-    console.log(productId);
+
+const handleMyCart = id => {
+    console.log(id);
+     fetch('http://localhost:5000/product')
+     .then(res => res.json())
+        .then(data =>{
+            const myProductCart = data.find(product => product._id === id)
+            fetch('http://localhost:5000/my-cart',{
+                method:"POST",
+                headers:{
+                    'content-type' : 'application/json'
+                },
+                body:JSON.stringify(myProductCart)
+            })
+             .then(res => res.json())
+             .then(data =>{
+                if (data.acknowledged) {
+                    alert("my cart added in database")
+                }
+             })
+        })
+ }
+
     return (
         <div className='flex my-10 lg:w-[70%] m-auto'>
         <div>
@@ -27,7 +50,7 @@ const ProductDetails = () => {
                 <h3  className=' mt-2'>Type : {productDetails.category}</h3>    
                 <h3  className=' mt-2'>Rating : {productDetails.rating}</h3> 
                 <h3  className=' mt-2 '>Product details : {productDetails.productDetails}</h3> 
-                <Link ><button className='btn btn-warning px-16 mt-3'>add to cart</button></Link>
+                <button onClick={() => handleMyCart(productDetails._id)} className='btn btn-warning px-16 mt-3'>add to cart</button>
             </div> 
             </div>
         </div>

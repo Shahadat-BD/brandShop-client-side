@@ -14,7 +14,7 @@ const AddProduct = () => {
         const productImage = form.productImage.value
 
         const productInfo = {brandName,productName,rating,price,category,productDetails,brandImage,productImage}
-
+        console.log(productInfo);
          fetch('http://localhost:5000/product',{
             method:"POST",
             headers:{
