@@ -4,7 +4,7 @@ import {useParams } from 'react-router-dom';
 const ProductDetails = () => {
     const productId = useParams()
     const [productDetails,setProductDetails] = useState([])
-    const [cart,setCart] = useState([])
+    // const [cart,setCart] = useState([])
 
 
     useEffect(()=>{
@@ -17,7 +17,6 @@ const ProductDetails = () => {
     },[])
 
 const handleMyCart = id => {
-    console.log(id);
      fetch('http://localhost:5000/product')
      .then(res => res.json())
         .then(data =>{
