@@ -23,19 +23,22 @@ const handleDeleteCart = id =>{
        <div className='my-10 lg:w-[80%] m-auto w-[90%]'>
          <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
             {
-                myProductCart.map(myCart => 
-                <div className='flex items-center gap-5 bg-gray-100 rounded-md p-2'>
-                        <img className='lg:w-[180px] w-[100px] h-[120px] lg:h-[180px]' src={myCart.productImage} alt="" srcset="" />
-                       <div className='flex-1'>
-                       <p>{myCart.productName}</p>
-                        <p>Brand :{myCart.brandName}</p>
-                        <p>Price :${myCart.price}</p>
-                        <p>Rating : {myCart.rating}</p>
-                       </div>
-                      <div onClick={()=>handleDeleteCart(myCart._id)} className='text-3xl bg-gray-300 cursor-pointer rounded-md text-red-500 p-2 round'>
-                         <AiFillDelete/>
-                      </div>
-                </div>)
+                myProductCart.length > 0 ? 
+                    myProductCart.map(myCart => 
+                    <div className='flex items-center gap-5 bg-gray-100 rounded-md p-2'>
+                            <img className='lg:w-[180px] w-[100px] h-[120px] lg:h-[180px]' src={myCart.productImage} alt="" srcset="" />
+                           <div className='flex-1'>
+                           <p>{myCart.productName}</p>
+                            <p>Brand :{myCart.brandName}</p>
+                            <p>Price :${myCart.price}</p>
+                            <p>Rating : {myCart.rating}</p>
+                           </div>
+                          <div onClick={()=>handleDeleteCart(myCart._id)} className='text-3xl bg-gray-300 cursor-pointer rounded-md text-red-500 p-2 round'>
+                             <AiFillDelete/>
+                          </div>
+                    </div>)
+                 : 
+                   <p className=' text-red-500 text-3xl my-10'>No Added Your Product</p>
             }
         </div>
        </div>

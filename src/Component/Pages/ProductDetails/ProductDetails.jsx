@@ -17,11 +17,28 @@ const ProductDetails = () => {
     },[])
 
 const handleMyCart = id => {
+
+
+
      fetch('http://localhost:5000/product')
      .then(res => res.json())
         .then(data =>{
             const myProductCart = data.find(product => product._id === id)
-            fetch('http://localhost:5000/my-cart',{
+                  setProductAllInfo(myProductCart)
+        })
+
+        const brandName = productAllInfo.brandName
+        const productName = productAllInfo.productName
+        const rating = productAllInfo.rating
+        const price = productAllInfo.price
+        const category = productAllInfo.category
+        const productDetails = productAllInfo.productDetails
+        const brandImage =  productAllInfo.brandImage
+        const productImage = productAllInfo.productImage
+
+        const myProductCart = {brandName,productName,rating,price,category,productDetails,brandImage,productImage}
+    
+        fetch('http://localhost:5000/my-cart',{
                 method:"POST",
                 headers:{
                     'content-type' : 'application/json'
@@ -34,7 +51,6 @@ const handleMyCart = id => {
                     alert("my cart added in database")
                 }
              })
-        })
  }
 
     return (
