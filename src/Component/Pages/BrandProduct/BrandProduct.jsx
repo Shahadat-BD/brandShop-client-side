@@ -4,13 +4,12 @@ const BrandProduct = () => {
 
  const brandProduct = useLoaderData()
 
-
     return (
         <div className='my-10 lg:w-[80%] w-[90%] m-auto'>
              <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
                  {
                     brandProduct.map(product => 
-                           <div key={product._id} className='bg-gray-100 py-3 rounded-md cursor-pointer'>
+                           <div key={product._id} className='bg-gray-100 py-3 rounded-md'>
                           <div className="flex lg:flex-row flex-col gap-5 mx-3">
                           <img className='w-[220px] m-auto h-[250px]'  src={product.productImage} alt="" srcset="" />
                           <div>
@@ -20,7 +19,7 @@ const BrandProduct = () => {
                            <h3  className=' mt-2'>Type : {product.category}</h3>    
                            <h3  className=' mt-2'>Rating : {product.rating}</h3>   
                            <Link to={`/productDetails/${product._id}`}> <button className="w-full btn btn-primary">Product Details</button> </Link>
-                           <button className="w-full my-2 btn btn-warning">Update Product</button>
+                           <Link to={`/update-product/${product._id}`}><button className="w-full my-2 btn btn-warning">Update Product</button></Link>
                           </div>
                           </div>
                     </div>

@@ -3,7 +3,7 @@ import {useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
     const productId = useParams()
-    const [productDetails,setProductDetails] = useState([])
+    const [productAllInfo,setProductAllInfo] = useState([])
     // const [cart,setCart] = useState([])
 
 
@@ -12,7 +12,7 @@ const ProductDetails = () => {
         .then(res => res.json())
         .then(data =>{
             const product = data.find(product => product._id === productId.id)
-             setProductDetails(product)
+             setProductAllInfo(product)
         })
     },[])
 
@@ -41,15 +41,15 @@ const handleMyCart = id => {
         <div className='flex my-10 lg:w-[70%] m-auto'>
         <div>
             <div className='flex gap-5 lg:flex-row md:flex-row flex-col'>
-            <img className='w-[300px] h-[300px]'  src={productDetails.productImage} alt="" srcset="" />
+            <img className='w-[300px] h-[300px]'  src={productAllInfo.productImage} alt="" srcset="" />
            <div>
-             <h3 className='font-bold text-pink-500 mt-2'>{productDetails.productName}</h3>    
-                <h3  className=' mt-2'>Price :${productDetails.price}</h3>    
-                <h3  className=' mt-2'>Brand Name :{productDetails.brandName}</h3>    
-                <h3  className=' mt-2'>Type : {productDetails.category}</h3>    
-                <h3  className=' mt-2'>Rating : {productDetails.rating}</h3> 
-                <h3  className=' mt-2 '>Product details : {productDetails.productDetails}</h3> 
-                <button onClick={() => handleMyCart(productDetails._id)} className='btn btn-warning px-16 mt-3'>add to cart</button>
+             <h3 className='font-bold text-pink-500 mt-2'>{productAllInfo.productName}</h3>    
+                <h3  className=' mt-2'>Price :${productAllInfo.price}</h3>    
+                <h3  className=' mt-2'>Brand Name :{productAllInfo.brandName}</h3>    
+                <h3  className=' mt-2'>Type : {productAllInfo.category}</h3>    
+                <h3  className=' mt-2'>Rating : {productAllInfo.rating}</h3> 
+                <h3  className=' mt-2 '>Product details : {productAllInfo.productDetails}</h3> 
+                <button onClick={() => handleMyCart(productAllInfo._id)} className='btn btn-warning px-16 mt-3'>add to cart</button>
             </div> 
             </div>
         </div>
