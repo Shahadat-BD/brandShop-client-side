@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import logo from '../../../assets/images/logo.png'
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
   const handleLogOut = () => {
@@ -20,8 +20,8 @@ const Navbar = () => {
       <NavLink
         className="px-0 rounded-none font-semibold text-md"
         style={({ isActive }) => ({
-          color: isActive ? "orange" : "black",
-          borderBottom: isActive ? "2px solid orange" : "none",
+          color: isActive ? "red" : "black",
+          borderBottom: isActive ? "2px solid red" : "none",
           background: isActive ? "none" : "none",
         })}
         to={"/"}
@@ -33,8 +33,8 @@ const Navbar = () => {
       <NavLink
         className="px-0 rounded-none font-semibold text-md"
         style={({ isActive }) => ({
-          color: isActive ? "orange" : "black",
-          borderBottom: isActive ? "2px solid orange" : "none",
+          color: isActive ? "red" : "black",
+          borderBottom: isActive ? "2px solid red" : "none",
           background: isActive ? "none" : "none",
         })}
         to={"/add-product"}
@@ -46,8 +46,8 @@ const Navbar = () => {
       <NavLink
         className="px-0 rounded-none font-semibold text-md"
         style={({ isActive }) => ({
-          color: isActive ? "orange" : "black",
-          borderBottom: isActive ? "2px solid orange" : "none",
+          color: isActive ? "red" : "black",
+          borderBottom: isActive ? "2px solid red" : "none",
           background: isActive ? "none" : "none",
         })}
         to={"/my-cart"}
@@ -62,7 +62,9 @@ const Navbar = () => {
     
   );
   return (
-    <div className="navbar bg-base-100">
+
+    <div className="bg-gray-50">
+       <div className="navbar lg:w-[90%] w-full m-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -90,7 +92,8 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Shahadat's BD</a>
+        <img className="lg:w-[50px] md:w-[50px] w-5" src={logo} alt="" srcset="" />
+        <p className="lg:text-xl md:text-xl text-lg font-bold"> BD <span className="text-red-500">Shop</span> </p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -102,29 +105,31 @@ const Navbar = () => {
 
     {
       user ? 
-      <img className="w-12 h-12 rounded-full mr-2" src={user.photoURL} alt="" />
+      <img className="lg:w-12 lg:h-12 md:w-12 md:h-12 w-6 h-6 rounded-full mr-2" src={user.photoURL} alt="" />
       :
       ""
     
      }
-      <p className="mr-3">{user && user.displayName}</p>
+      <p className="mr-3 lg:text-md md:textarea-md text-xs">{user && user.displayName}</p>
         {user ? (
           <NavLink
             onClick={handleLogOut}
-            className="bg-orange-500 text-white lg:px-8 lg:py-2 px-3 py-2 font-semibold rounded-md"
+            className="bg-red-500 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
         >
             LogOut
           </NavLink>
         ) : (
           <NavLink
             to={"/login"}
-            className="bg-orange-500 text-white px-8 py-2 font-semibold rounded-md"
+            className="bg-red-500 text-white px-8 py-2 font-semibold rounded-md"
           >
             Login
           </NavLink>
         )}
       </div>
     </div>
+    </div>
+   
   );
 };
 

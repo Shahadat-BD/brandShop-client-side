@@ -17,13 +17,14 @@ const Brand = () => {
     
     return (
         <div className='my-10'>
+            <h2 className='text-center font-bold text-3xl'>Explore <span className='text-red-500'>Brand Shop</span></h2>
              <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8'>
                  {
                     brand.map(brand => 
                      <Link to={`/product/${brand.brandName}`}>
-                           <div key={brand._id} className='bg-gray-100 py-3 rounded-md cursor-pointer'>
+                           <div key={brand._id} className='bg-red-50 py-3 rounded-md cursor-pointer'>
                            <img className='w-[60%] m-auto h-[100px]'  src={brand.brandImage} alt="" srcset="" />
-                           <h3  className='text-center text-3xl font-bold text-pink-500 mt-2'>{brand.brandName}</h3>    
+                           <h3  className='text-center text-3xl font-bold text-red-500 mt-2'>{brand.brandName}</h3>    
                     </div>
                      </Link>
                         )
