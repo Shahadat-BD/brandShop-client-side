@@ -11,5 +11,6 @@ Click here for the Project Live site Link: [https://e-commerce-brand-shop.web.ap
 * If someone buy Preferred product,then he click on the preferred brand.then redirect to login page if he/she not loggedIn, otherwise he can see the our brand product.
 * And Someone he can see the product details by click in details button of product.And updated product.
 * User want to store your product,then he click on the 'add to cart' button.then he will see the selected products in my-cart routes.
+* if user want to product added,he can do. and deleted his/her product whice prosuct is added 'my cart' routes.
 * All product data stroe in database.
   
