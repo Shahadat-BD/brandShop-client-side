@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "brandName": "Amazon",
+      "image1": "https://i.ibb.co/gwrVCDX/amazon-3.jpg",
+      "image2": "https://i.ibb.co/vhmxB0C/amazon-2.jpg",
+      "image3": "https://i.ibb.co/HzgKPgb/amazon-1.jpg"
+    },
+   
+    {
+      "id": 2,
+      "brandName": "Alibaba",
+      "image1": "https://i.ibb.co/wyWr264/alibaba-2.jpg",
+      "image2": "https://i.ibb.co/48rbqQF/alibaba-1.jpg",
+      "image3": "https://i.ibb.co/pjdMc28/alibaba-3.jpg"
+    },
+
+    {
+      "id": 3,
+      "brandName": "walmart",
+      "image1": "https://i.ibb.co/WKW48JX/walmart-1.jpg",
+      "image2": "https://i.ibb.co/6rCXGF3/image-1.png",
+      "image3": "https://i.ibb.co/MgYDqv2/walmart-3.jpg"
+    },
+    
+    {
+      "id": 4,
+      "brandName": "Rokomari",
+      "image1": "https://i.ibb.co/DL99BDW/rokomari-3.jpg",
+      "image2": "https://i.ibb.co/Kq9fMn7/rokomari-2.jpg",
+      "image3": "https://i.ibb.co/KFtP9Z8/rokomari-1.jpg"
+    },
+
+    {
+      "id": 5,
+      "brandName": "Chaldal",
+      "image1": "https://i.ibb.co/ZS7T3Vc/chaldal-3.png",
+      "image2": "https://i.ibb.co/7C8gFcd/chaldal-2.png",
+      "image3": "https://i.ibb.co/SKRBw5F/chaldal-1.jpg"
+    },
+    {
+      "id": 16,
+      "brandName": "Daraz",
+      "image1": "https://i.ibb.co/HDJYKdc/daraz-1.jpg",
+      "image2": "https://i.ibb.co/jwQ7Dzr/daraz-3.jpg",
+      "image3": "https://i.ibb.co/kQYw75T/daraz-2.webp"
+    }
+  ]
