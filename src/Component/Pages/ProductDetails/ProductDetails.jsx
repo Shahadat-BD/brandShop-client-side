@@ -57,7 +57,7 @@ const handleMyCart = id => {
         <div className='flex my-10 lg:w-[70%] m-auto md:w-[80%] w-[90%]'>
         <div>
             <div className='flex gap-5 lg:flex-row flex-col'>
-            <img className='lg:w-[470px] lg:h-[400px] rounded-md w-full'  src={productAllInfo.productImage} alt="" srcset="" />
+            <img className='lg:w-[490px] lg:h-[430px] rounded-md w-full'  src={productAllInfo.productImage} alt="" srcset="" />
            <div>
              <h3 className='font-bold text-red-500 text-2xl'>{productAllInfo.productName}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2'> <span className='font-bold'>Price :</span> ${productAllInfo.price}</h3>    
