@@ -13,7 +13,7 @@ const ProductDetails = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://e-commerce-server-side-psi.vercel.app/product')
         .then(res => res.json())
         .then(data =>{
             const product = data.find(product => product._id === productId.id)
@@ -25,7 +25,7 @@ const handleMyCart = id => {
 
 
 
-     fetch('http://localhost:5000/product')
+     fetch('https://e-commerce-server-side-psi.vercel.app/product')
      .then(res => res.json())
         .then(data =>{
             const myProductCart = data.find(product => product._id === id)
@@ -43,7 +43,7 @@ const handleMyCart = id => {
 
         const myProductCart = {email,brandName,productName,rating,price,type,productDetails,brandImage,productImage}
     
-        fetch('http://localhost:5000/my-cart',{
+        fetch('https://e-commerce-server-side-psi.vercel.app/my-cart',{
                 method:"POST",
                 headers:{
                     'content-type' : 'application/json'

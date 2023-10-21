@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Brand = () => {
     const [brand,setBrand] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://e-commerce-server-side-psi.vercel.app/product')
         .then(res => res.json())
         .then(data =>{
             setBrand(data.slice(0,6))

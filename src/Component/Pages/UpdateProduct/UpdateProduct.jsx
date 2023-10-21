@@ -7,7 +7,7 @@ const UpdateProduct = () => {
     const updateProduct = useParams()
     const [product,setProduct] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://e-commerce-server-side-psi.vercel.app/product')
         .then(res => res.json())
         .then(data =>{
             const product = data.find(product => product._id === updateProduct.id)
@@ -30,7 +30,7 @@ const UpdateProduct = () => {
         const updatedProductInfo = {brandName,productName,rating,price,type,productDetails,brandImage,productImage}
 
 
-        fetch(`http://localhost:5000/product/${updateProduct.id}`,{
+        fetch(`https://e-commerce-server-side-psi.vercel.app/product/${updateProduct.id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'

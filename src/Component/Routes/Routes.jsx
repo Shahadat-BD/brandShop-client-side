@@ -28,22 +28,22 @@ const router = createBrowserRouter([
             {
                 path: '/product/:brandName',
                 element: <BrandProduct></BrandProduct>,
-                loader : ({params}) => fetch(`http://localhost:5000/product/${params.brandName}`)
+                loader : ({params}) => fetch(`https://e-commerce-server-side-psi.vercel.app/product/${params.brandName}`)
             }, 
             {
                 path: '/productDetails/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader : ({params}) => fetch(`http://localhost:5000/product/${params._id}`)
+                loader : ({params}) => fetch(`https://e-commerce-server-side-psi.vercel.app/product/${params._id}`)
             }, 
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/my-cart')
+                loader:()=>fetch('https://e-commerce-server-side-psi.vercel.app/my-cart')
             },
              {
                  path : '/update-product/:id',
                  element : <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                 loader: ({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+                 loader: ({params})=>fetch(`https://e-commerce-server-side-psi.vercel.app/product/${params.id}`)
              },
             {
                 path: '/login',
