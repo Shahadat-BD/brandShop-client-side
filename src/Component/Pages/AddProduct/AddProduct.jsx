@@ -31,20 +31,20 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <div className='w-[60%] m-auto my-20 bg-gray-200 text-center'>
-             <h3 className='text-2xl font-bold p-3'>Add New Product</h3>
-            <form onSubmit={handleNewProductAdd} className='p-10'>
-                <div className='grid grid-cols-2 gap-5'>
-                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='brand name' name="brandName" id="" />
-                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='product name' name="productName" id="" />
-                <input className='py-2 pl-2 rounded-sm' type='number' placeholder='rating' name="rating" id="" />
-                <input className='py-2 pl-2 rounded-sm' type="number" required placeholder='product price' name="price" id="" />
-                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='type' name="type" id="" />
-                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='product details' name="details" id="" />
+            <div className='lg:w-[60%] m-auto md:w-[70%] w-full md:my-[185px] lg:my-10  bg-gray-200'>
+             <h3 className='text-2xl text-red-500 font-bold p-3 text-center'>Add New Product</h3>
+            <form onSubmit={handleNewProductAdd} className='px-5 py-5'>
+                <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
+                <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='brand name' name="brandName" id="" />
+                <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='product name' name="productName" id="" />
+                <input className='py-2 pl-2  rounded-sm' type='number' placeholder='rating' name="rating" id="" />
+                <input className='py-2 pl-2  rounded-sm' type="number" required placeholder='product price' name="price" id="" />
+                <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='type' name="type" id="" />
+                <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='product details' name="details" id="" />
                 </div>
-                <input className='w-full my-3 py-2 pl-2 rounded-sm' type="text" required placeholder='product image link here' name="productImage" id="" /> 
-                <input className='w-full mb-5 py-2 pl-2 rounded-sm' type="text" required placeholder='brand image link here' name="brandImage" id="" /> 
-                <input className='w-full cursor-pointer bg-pink-500 text-white py-2 font-bold rounded-sm' type="submit" value="Add Product" />
+                <input className='w-full my-3 py-2 pl-2  rounded-sm' type="text" required placeholder='product image link here' name="productImage" id="" /> 
+                <input className='w-full mb-5 py-2 pl-2  rounded-sm' type="text" required placeholder='brand image link here' name="brandImage" id="" /> 
+                <input className='w-full cursor-pointer bg-red-500 text-white py-2 font-bold rounded-sm' type="submit" value="Add Product" />
             </form>
         </div>
         </div>
