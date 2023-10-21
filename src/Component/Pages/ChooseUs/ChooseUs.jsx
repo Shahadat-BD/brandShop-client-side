@@ -10,10 +10,10 @@ const ChooseUs = () => {
       <div className="flex lg:flex-row md:flex-row flex-col-reverse items-center justify-around ">
         <img className="w-[650px] h-[550px]" src={banner} alt="" srcset="" />
         <div className="w-3/4">
-          <p className="text-gray-500 my-5">Welcome to BD Shop, your premier destination for an unparalleled e-commerce experience. We proudly offer an extensive array of products, spanning fashion, electronics, home essentials, and more, all within easy reach</p>
+          <p className="text-gray-500 my-5 "> <span className="text-red-500 font-bold text-2xl">Welcome to BD Shop,</span> your premier destination for an unparalleled e-commerce experience. We proudly offer an extensive array of products, spanning fashion, electronics, home essentials, and more, all within easy reach</p>
           <div className="flex mb-2 items-center">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               Discover a wide selection of products, from fashion to electronics
               .
@@ -21,7 +21,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex mb-2 items-center ">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               Enjoy competitive pricing and exclusive deals to save on your
               purchases.
@@ -29,7 +29,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex mb-2 items-center ">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               Enjoy competitive pricing and exclusive deals to save on your
               purchases.
@@ -37,7 +37,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex mb-2 items-center ">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               Shop confidently with our secure payment methods and data
               protection.
@@ -45,7 +45,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex mb-2 items-center ">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               We prioritize quality, ensuring that our products meet your
               standards.
@@ -53,7 +53,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex mb-2 items-center">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               Shop anytime, anywhere, and have your items delivered to your
               doorstep.
@@ -61,7 +61,7 @@ const ChooseUs = () => {
           </div>
           <div className="flex items-center">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
-            <p>
+            <p className="font-bold text-gray-500">
               {" "}
               BD Shop is a name you can rely on for a trustworthy.
             </p>

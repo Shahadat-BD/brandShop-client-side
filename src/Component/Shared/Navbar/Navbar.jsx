@@ -110,7 +110,7 @@ const Navbar = () => {
       ""
     
      }
-      <p className="mr-3 lg:text-md md:textarea-md text-xs">{user && user.displayName}</p>
+      <p className="mr-3 lg:text-md md:text-md text-xs">{user && user.displayName}</p>
         {user ? (
           <NavLink
             onClick={handleLogOut}
@@ -121,7 +121,7 @@ const Navbar = () => {
         ) : (
           <NavLink
             to={"/login"}
-            className="bg-red-500 text-white px-8 py-2 font-semibold rounded-md"
+            className="lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
           >
             Login
           </NavLink>
