@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = () => {
     const handleNewProductAdd = event =>{
@@ -25,7 +27,7 @@ const AddProduct = () => {
          .then(res=> res.json())
          .then(data => {
               if (data.acknowledged) {
-                  alert('product added successfully in database')
+                  toast('product successfully added in database')
               }
          })
     }
@@ -46,6 +48,7 @@ const AddProduct = () => {
                 <input className='w-full mb-5 py-2 pl-2  rounded-sm' type="text" required placeholder='brand image link here' name="brandImage" id="" /> 
                 <input className='w-full cursor-pointer bg-red-500 text-white py-2 font-bold rounded-sm' type="submit" value="Add Product" />
             </form>
+            <ToastContainer></ToastContainer>
         </div>
         </div>
     );

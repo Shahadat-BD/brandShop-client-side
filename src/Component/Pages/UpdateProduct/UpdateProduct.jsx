@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UpdateProduct = () => {
     const updateProduct = useParams()
@@ -38,7 +40,9 @@ const UpdateProduct = () => {
         })
         .then(res=> res.json())
         .then(data =>{
-            console.log(data);
+            if (data.acknowledged) {
+                toast("product successfully updated.please check your product")        
+            }
         })
     }
     
@@ -59,7 +63,8 @@ const UpdateProduct = () => {
                 <input className='w-full mb-5 py-2 pl-2 rounded-sm' type="text"  defaultValue={product.brandImage} required placeholder='brand image link here' name="brandImage" id="" /> 
                 <input className='w-full cursor-pointer bg-red-500 text-white py-2 font-bold rounded-sm' type="submit" value="update Product" />
             </form> 
-            </div>     
+            </div>  
+            <ToastContainer/>   
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import { Link, useLoaderData} from "react-router-dom";
 
+
 const BrandProduct = () => {
 
  const brandProduct = useLoaderData()

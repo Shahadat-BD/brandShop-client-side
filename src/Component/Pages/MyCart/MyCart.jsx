@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import {AiFillDelete} from 'react-icons/ai'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const MyCart = () => {
+
+const {user} = useContext(AuthContext)
 
 const loadMyProductCart = useLoaderData()
 const [myProductCart,setMyProductCart] = useState(loadMyProductCart)
+
 const handleDeleteCart = id =>{
      fetch(`http://localhost:5000/my-cart/${id}`,{
         method:"DELETE"
@@ -18,13 +22,14 @@ const handleDeleteCart = id =>{
         }
      })
 }
-
+     const UserCart = myProductCart.filter(cart => cart.email === user.email)
+     
     return (
        <div className='my-10 lg:w-[80%] m-auto w-[90%] md:w-[80%]'>
          <div className='grid lg:grid-cols-2  grid-cols-1 gap-5'>
             {
-                myProductCart.length > 0 ? 
-                    myProductCart.map(myCart => 
+                UserCart.length > 0 ? 
+                    UserCart.map(myCart => 
                     <div className='flex items-center gap-5 bg-gray-100 rounded-md p-2 md:p-5'>
                             <img className='lg:w-[180px] lg:h-[180px] md:w-[180px] md:h-[180px] w-[100px] h-[100px] rounded-sm' src={myCart.productImage} alt="" srcset="" />
                            <div className='flex-1'>

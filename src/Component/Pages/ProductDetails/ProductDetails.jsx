@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {useParams } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails = () => {
+    const {user} = useContext(AuthContext)
+    const email = user.email
     const productId = useParams()
     const [productAllInfo,setProductAllInfo] = useState([])
     // const [cart,setCart] = useState([])
@@ -36,7 +41,7 @@ const handleMyCart = id => {
         const brandImage =  productAllInfo.brandImage
         const productImage = productAllInfo.productImage
 
-        const myProductCart = {brandName,productName,rating,price,type,productDetails,brandImage,productImage}
+        const myProductCart = {email,brandName,productName,rating,price,type,productDetails,brandImage,productImage}
     
         fetch('http://localhost:5000/my-cart',{
                 method:"POST",
@@ -48,7 +53,7 @@ const handleMyCart = id => {
              .then(res => res.json())
              .then(data =>{
                 if (data.acknowledged) {
-                    alert("my cart added in database")
+                    toast("my product successfully added in database")
                 }
              })
  }
@@ -68,6 +73,7 @@ const handleMyCart = id => {
                 <button onClick={() => handleMyCart(productAllInfo._id)} className='py-2 rounded-md text-white bg-red-500 px-16 mt-3'>add to cart</button>
             </div> 
             </div>
+            <ToastContainer/>
         </div>
         </div>
     );
