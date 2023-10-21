@@ -7,9 +7,9 @@ const ChooseUs = () => {
         <h1 className="text-center font-bold text-3xl">
             Why <span className="text-red-500">Choose Us</span>
           </h1>
-      <div className="flex lg:flex-row md:flex-row flex-col-reverse items-center justify-around ">
-        <img className="w-[650px] h-[550px]" src={banner} alt="" srcset="" />
-        <div className="w-3/4">
+      <div className="flex lg:flex-row  flex-col-reverse items-center justify-around ">
+        <img className="lg:w-[650px] w-full lg:h-[550px]" src={banner} alt="" srcset="" />
+        <div className="lg:w-3/4 w-full">
           <p className="text-gray-500 my-5 "> <span className="text-red-500 font-bold text-2xl">Welcome to BD Shop,</span> your premier destination for an unparalleled e-commerce experience. We proudly offer an extensive array of products, spanning fashion, electronics, home essentials, and more, all within easy reach</p>
           <div className="flex mb-2 items-center">
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}

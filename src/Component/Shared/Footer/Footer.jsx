@@ -22,18 +22,18 @@ const Footer = () => {
               <CiLocationOn className="text-2xl font-bold" />
               <p>
                 
-                21,Sheik Mujib Road Agrabad
+                21,JC Moard Rashid Building
                 <br />
                 chittagong,BD
               </p>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <BsTelephoneForward className="text-2xl font-bold" />
-              <p>+88033462332</p>
+              <p>+880454632</p>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <AiOutlineMail className="text-2xl  font-bold" />
-              <p>socialEvent34@gmail.com</p>
+              <p>bdShop12@gmail.com</p>
             </div>
           </div>
         </aside>
