@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import {AiFillDelete} from 'react-icons/ai'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
+
 const MyCart = () => {
 
 const {user} = useContext(AuthContext)
@@ -10,17 +12,36 @@ const loadMyProductCart = useLoaderData()
 const [myProductCart,setMyProductCart] = useState(loadMyProductCart)
 
 const handleDeleteCart = id =>{
-     fetch(`http://localhost:5000/my-cart/${id}`,{
-        method:"DELETE"
-     })
-     .then(res => res.json())
-     .then(data =>{
-        if (data.deletedCount > 0) {
-            alert("product has been deleted successfully")
-            const remainingCart = myProductCart.filter(myPrdCart => myPrdCart._id !== id)
-            setMyProductCart(remainingCart)
-        }
-     })
+   Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to delete this product",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+      fetch(`http://localhost:5000/my-cart/${id}`,{
+         method:"DELETE"
+      })
+      .then(res => res.json())
+      .then(data =>{
+         if (data.deletedCount > 0) {
+            Swal.fire(
+               'Deleted!',
+               'Your product has been deleted successfully.',
+               'success'
+             )
+             const remainingCart = myProductCart.filter(myPrdCart => myPrdCart._id !== id)
+             setMyProductCart(remainingCart)
+         }
+      })
+
+      }
+    })
+
+
 }
      const UserCart = myProductCart.filter(cart => cart.email === user.email)
      
