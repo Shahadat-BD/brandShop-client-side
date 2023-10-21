@@ -31,8 +31,7 @@ const ChooseUs = () => {
             <AiOutlineCheckSquare className="text-red-500 text-3xl mr-3 " />{" "}
             <p className="font-bold text-gray-500">
               {" "}
-              Enjoy competitive pricing and exclusive deals to save on your
-              purchases.
+              Navigate our intuitive website and mobile app for shopping journey.
             </p>
           </div>
           <div className="flex mb-2 items-center ">

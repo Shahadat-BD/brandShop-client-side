@@ -38,7 +38,7 @@ const handleDeleteCart = id =>{
                           </div>
                     </div>)
                  : 
-                   <p className=' text-red-500 text-3xl my-10'>No Added Your Product</p>
+                   <p className=' text-red-500 text-3xl my-20 text-center'>No Added Product in here</p>
             }
         </div>
        </div>

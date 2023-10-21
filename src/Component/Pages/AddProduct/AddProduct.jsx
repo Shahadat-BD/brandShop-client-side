@@ -8,12 +8,12 @@ const AddProduct = () => {
         const productName = form.productName.value
         const rating = form.rating.value
         const price = form.price.value
-        const category = form.category.value
+        const type = form.type.value
         const productDetails = form.details.value
         const brandImage =  form.brandImage.value
         const productImage = form.productImage.value
 
-        const productInfo = {brandName,productName,rating,price,category,productDetails,brandImage,productImage}
+        const productInfo = {brandName,productName,rating,price,type,productDetails,brandImage,productImage}
         console.log(productInfo);
          fetch('http://localhost:5000/product',{
             method:"POST",
@@ -39,7 +39,7 @@ const AddProduct = () => {
                 <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='product name' name="productName" id="" />
                 <input className='py-2 pl-2 rounded-sm' type='number' placeholder='rating' name="rating" id="" />
                 <input className='py-2 pl-2 rounded-sm' type="number" required placeholder='product price' name="price" id="" />
-                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='category' name="category" id="" />
+                <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='type' name="type" id="" />
                 <input className='py-2 pl-2 rounded-sm' type="text" required placeholder='product details' name="details" id="" />
                 </div>
                 <input className='w-full my-3 py-2 pl-2 rounded-sm' type="text" required placeholder='product image link here' name="productImage" id="" /> 

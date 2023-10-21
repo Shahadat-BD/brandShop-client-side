@@ -20,12 +20,12 @@ const UpdateProduct = () => {
         const productName = form.productName.value
         const rating = form.rating.value
         const price = form.price.value
-        const category = form.category.value
+        const type = form.type.value
         const productDetails = form.details.value
         const brandImage =  form.brandImage.value
         const productImage = form.productImage.value
 
-        const updatedProductInfo = {brandName,productName,rating,price,category,productDetails,brandImage,productImage}
+        const updatedProductInfo = {brandName,productName,rating,price,type,productDetails,brandImage,productImage}
 
 
         fetch(`http://localhost:5000/product/${updateProduct.id}`,{
@@ -52,7 +52,7 @@ const UpdateProduct = () => {
                 <input className='py-2 pl-2 rounded-sm' defaultValue={product.productName}  type="text" required placeholder='product name' name="productName" id="" />
                 <input className='py-2 pl-2 rounded-sm' defaultValue={product.rating}  type='number' placeholder='rating' name="rating" id="" />
                 <input className='py-2 pl-2 rounded-sm' defaultValue={product.price}  type="number" required placeholder='product price' name="price" id="" />
-                <input className='py-2 pl-2 rounded-sm' defaultValue={product.category}  type="text" required placeholder='category' name="category" id="" />
+                <input className='py-2 pl-2 rounded-sm' defaultValue={product.type}  type="text" required placeholder='type' name="type" id="" />
                 <input className='py-2 pl-2 rounded-sm' defaultValue={product.productDetails}  type="text" required placeholder='product details' name="details" id="" />
                 </div>
                 <input className='w-full my-3 py-2 pl-2 rounded-sm' type="text"  defaultValue={product.productImage} required placeholder='product image link here' name="productImage" id="" /> 

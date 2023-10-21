@@ -31,12 +31,12 @@ const handleMyCart = id => {
         const productName = productAllInfo.productName
         const rating = productAllInfo.rating
         const price = productAllInfo.price
-        const category = productAllInfo.category
+        const type = productAllInfo.type
         const productDetails = productAllInfo.productDetails
         const brandImage =  productAllInfo.brandImage
         const productImage = productAllInfo.productImage
 
-        const myProductCart = {brandName,productName,rating,price,category,productDetails,brandImage,productImage}
+        const myProductCart = {brandName,productName,rating,price,type,productDetails,brandImage,productImage}
     
         fetch('http://localhost:5000/my-cart',{
                 method:"POST",
@@ -62,7 +62,7 @@ const handleMyCart = id => {
              <h3 className='font-bold text-pink-500 mt-2'>{productAllInfo.productName}</h3>    
                 <h3  className=' mt-2'>Price :${productAllInfo.price}</h3>    
                 <h3  className=' mt-2'>Brand Name :{productAllInfo.brandName}</h3>    
-                <h3  className=' mt-2'>Type : {productAllInfo.category}</h3>    
+                <h3  className=' mt-2'>Type : {productAllInfo.type}</h3>    
                 <h3  className=' mt-2'>Rating : {productAllInfo.rating}</h3> 
                 <h3  className=' mt-2 '>Product details : {productAllInfo.productDetails}</h3> 
                 <button onClick={() => handleMyCart(productAllInfo._id)} className='btn btn-warning px-16 mt-3'>add to cart</button>
