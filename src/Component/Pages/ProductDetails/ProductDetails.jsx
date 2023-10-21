@@ -54,18 +54,18 @@ const handleMyCart = id => {
  }
 
     return (
-        <div className='flex my-10 lg:w-[70%] m-auto'>
+        <div className='flex my-10 lg:w-[70%] m-auto md:w-[80%] w-[90%]'>
         <div>
-            <div className='flex gap-5 lg:flex-row md:flex-row flex-col'>
-            <img className='w-[300px] h-[300px]'  src={productAllInfo.productImage} alt="" srcset="" />
+            <div className='flex gap-5 lg:flex-row flex-col'>
+            <img className='lg:w-[470px] lg:h-[400px] rounded-md w-full'  src={productAllInfo.productImage} alt="" srcset="" />
            <div>
-             <h3 className='font-bold text-pink-500 mt-2'>{productAllInfo.productName}</h3>    
-                <h3  className=' mt-2'>Price :${productAllInfo.price}</h3>    
-                <h3  className=' mt-2'>Brand Name :{productAllInfo.brandName}</h3>    
-                <h3  className=' mt-2'>Type : {productAllInfo.type}</h3>    
-                <h3  className=' mt-2'>Rating : {productAllInfo.rating}</h3> 
-                <h3  className=' mt-2 '>Product details : {productAllInfo.productDetails}</h3> 
-                <button onClick={() => handleMyCart(productAllInfo._id)} className='btn btn-warning px-16 mt-3'>add to cart</button>
+             <h3 className='font-bold text-red-500 text-2xl'>{productAllInfo.productName}</h3>    
+                <h3  className='text-gray-500 font-medium mt-2'> <span className='font-bold'>Price :</span> ${productAllInfo.price}</h3>    
+                <h3  className='text-gray-500 font-medium mt-2'><span className='font-bold'>Brand Name :</span>{productAllInfo.brandName}</h3>    
+                <h3  className='text-gray-500 font-medium mt-2'><span className='font-bold'>Type : </span>{productAllInfo.type}</h3>    
+                <h3  className='text-gray-500 font-medium mt-2'><span className='font-bold'>Rating :</span> {productAllInfo.rating}</h3> 
+                <h3  className='text-gray-500 font-medium mt-2 '> <span className='font-bold'>Product details : </span> {productAllInfo.productDetails}</h3> 
+                <button onClick={() => handleMyCart(productAllInfo._id)} className='py-2 rounded-md text-white bg-red-500 px-16 mt-3'>add to cart</button>
             </div> 
             </div>
         </div>
